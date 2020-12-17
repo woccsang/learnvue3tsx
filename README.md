@@ -46,15 +46,18 @@ declare module '@vue/runtime-core' {
     - 子组件中props 中增加类型 
 
 ```javascript
+///子组件
+const CreateDialog = defineComponent({
 emits: ['close'],
 props: {
-	visible: {
+    visible: {
       type: Boolean
     },
     onClose: { /// 重点
       type: Function as PropType<(e: MouseEvent) => void>,
     }
 },
+})
 ///父组件
 <CreateDialog visible={this.visible} 
 onClose={() => { this.visible = false }}></CreateDialog>
@@ -64,16 +67,19 @@ onClose={() => { this.visible = false }}></CreateDialog>
 ### 错误处理
 
 Each record in dataSource of table should have a unique `key` prop, or set `rowKey` of Table to an unique primary key 
+
 antd中table需要显示指定rowkey ，在react的tsx 解决方法 增加 `rowKey={(record, index) => index}`在vue的template 中直接赋一个唯一值 `rowKey="id"`
 
 ***
 
 Catch all routes ("*") must now be defined using a param with a custom regex
+
 在针对vue3的vue-router中通配符匹配必须使用`/:catchAll(.*)`
 
 ***
 
 JSX element type 'XXX' does not have any construct or call signatures
+
 ts中返回的组件需要使用`defineComponent()`
 
 
