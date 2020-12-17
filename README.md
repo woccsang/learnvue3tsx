@@ -1,9 +1,3 @@
-## 环境搭建
-
-
-
-### 引入antd
-
 **经过调研 使用UI库的页面推荐依旧使用vue文件开发。目前antd-vue还是以template为主。无法完全兼容tsx**
 
 ### 引入Vuex和axios
